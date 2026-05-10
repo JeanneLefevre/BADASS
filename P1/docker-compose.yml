@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+
+  basic:
+    build:
+      context: ./image
+    image: basic-image
+    container_name: basic-container
+    tty: true
+
+  router1:
+    build:
+      context: ./router-image
+    image: router-image
+    container_name: router1
+    privileged: true
+    tty: true
+    networks:
+      net1:
+        ipv4_address: 10.10.0.1
+
+networks:
+  net1:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 10.10.0.0/24
+          gateway: 10.10.0.254
