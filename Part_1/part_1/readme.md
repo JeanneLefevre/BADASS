@@ -2,7 +2,7 @@
 
 ## Overview
 
-BADASS is a network automation project built with Docker and GNS3.
+BADASS is a network project built with Docker and GNS3.
 
 The goal is to deploy and configure a simple network topology composed of:
 
